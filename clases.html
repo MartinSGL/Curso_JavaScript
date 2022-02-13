@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Animal{
+            //el constructor es un método 
+            //especialque se ejecuta en el momento de instancia la clas
+            constructor(nombre,genero){
+                this.nombre = nombre;
+                this.genero = genero;
+            }
+
+            //metodos
+            sonar(){
+                console.log("hago sonidos por que estoy vivo")
+            }
+            saludar(){
+                console.log(`Hola me llamo ${this.nombre}`)
+            }
+        }
+
+        class Perro extends Animal{
+            constructor(nombre,genero,tamanio){
+                //manda llamar constructor padre
+                super(nombre, genero)
+                this.tamanio = tamanio
+                this.raza = null
+            }
+
+            sonar(){
+                console.log("soy un perro y mi sonido es un ladrido")
+            }
+
+            ladrar(){
+                console.log("guauuuuuuuu guauuuuuuuu")
+            }
+
+            get getRaza(){
+                return this.raza
+            }
+
+            set setRaza(raza){
+                this.raza = raza
+            }
+        }
+
+        const mimi = new Animal('mimi','hembra'),
+            scooby = new Perro('scooby','macho','Gigante');
+
+            console.log(mimi,scooby);
+            mimi.sonar();
+            scooby.sonar()
+            console.log(scooby.getRaza)
+            scooby.setRaza = 'Perreishon'
+            console.log(scooby.getRaza)
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <section id="seccion14" class="section" data-scroll-spy>
+        <h2>Validaciones de Formulario</h2>
+        <form class="contact-form">
+            <legend>Envianos tus comentarios</legend>
+            <input type="text" name="name" placeholder="Escribre tu nombre" 
+                title="El nombre sólo acepta letras y espacios en blanco" required
+                pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$">
+            <input type="email" name="email" placeholder="Escribe tu correo" required
+                title="email incorrecto"
+                pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$">
+            <input type="text" name="subject" placeholder="Escribe un asunto" required
+                title="El asunto es requerido">
+            <textarea name="coments" id="" cols="50" rows="5" placeholder="Escribe tus comentarios" required 
+                 data-pattern="^.{1,255}$"  title="Tu comentario no debe exceder los 255 caracteres"></textarea>
+            <input type="submit">
+            <div class="contact-form-loader none">
+                <img src="assets/loader.gif" alt="cargando">
+            </div>
+            <div class="contact-form-response none">
+            </div>
+        </form>
+    </section>
+    <script src="js/validaciones.js"></script>
+    <script>
+        contactFormValidation()
+    </script>
+</body>
+</html>

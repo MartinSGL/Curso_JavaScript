@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        this.nombre = 'Conexto global'
+        console.log(this.nombre)
+        function imprimir(){
+            console.log(this)
+        }
+        // imprimir()
+
+        const obj = {
+            nombre:"Contexto objeto",
+            imprimir(){
+                console.log(this.nombre)
+            }
+        }
+        obj.imprimir()
+        const obj2 = {
+            nombre:"Contexto Objeto 2",
+            imprimir
+        }
+        obj2.imprimir()
+
+        const obj3 = {
+            nombre:"Contexto objeto 3",
+            imprimir:()=>{
+                console.log(this.nombre)
+            }
+        }
+
+        obj3.imprimir()
+
+        function Persona(nombre){
+            const that = this;
+            this.nombre = nombre;
+            console.log(this.nombre)
+            return function(){
+                console.log(this.nombre)
+            }
+            // return () => console.log(this.nombre)
+            // return function(){
+            //     console.log(that.nombre)
+            // }
+        }
+
+        let chavin = new Persona('Chavin')
+        chavin()
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 5) Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH".
+    let invertirCadena = (cadena=false) =>
+        typeof cadena === "string" && cadena != false
+            ? cadena.split('').reverse().join('')
+            :  "Tipo de dato incorrecto"
+    
+    console.log(invertirCadena(""))
+    // 6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
+    let contarPalabra = (cadena="", palabra="") => 
+        typeof (cadena || palabra) === "string" && (cadena || palabra) != false
+            ? cadena.split(" ").filter(req => req==palabra).length
+            :  "Tipo de dato incorrecto"
+    
+    console.log(contarPalabra("hola hola perro perro juanga", "hola"))
+    // 7) Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true.
+    let palindriomo = cadena =>{
+        if(typeof cadena === "string" && cadena != false){
+            let cadena_sin_espacios = cadena.split(' ').join('')
+            let cadena_invertida = cadena_sin_espacios.split('').reverse().join('')
+            let res;
+            cadena_invertida.toLocaleLowerCase === cadena_sin_espacios.toLocaleLowerCase 
+            ? res = "si es palindromo" 
+            : res = "no es palindromo"
+            return res
+        }else{
+            return "Tipo de dato incorrecto"
+        }
+    }
+
+    console.log(palindriomo("A luna ese anula"))
+    // 8) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5.
+    let deletePatron = (cadena,patron) => {
+        if(typeof (cadena || patron) === "string" && (cadena || patron) != false){
+            const exp = patron;
+            return cadena.replaceAll(patron,"")
+            //cadena.replace(new RegExp(patron,"ig"),"")
+        }else{
+            return "Tipo de dato incorrecto"
+        }
+    }
+
+    console.log(deletePatron("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz"))
+
+    
+    </script>
+</body>
+</html>

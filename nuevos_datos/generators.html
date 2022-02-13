@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function* iterable(){
+            yield 'hola'
+            console.log('hola consola')
+            yield 'hola 2'
+            console.log('seguimos con mas instrucciones de nuestro código')
+            yield('hola 3')
+            yield('hola 4')
+        }
+
+        let iterador = iterable()
+        // console.log(iterador.next())
+        // console.log(iterador.next())
+        // console.log(iterador.next())
+        // console.log(iterador.next())
+        // console.log(iterador.next())
+
+        for (const y of iterador) {
+            console.log(y);
+        }
+
+        const arr = [...iterable()];
+        console.log(arr)
+
+        console.clear();
+
+        function cuadrado(valor){
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve({res:valor*valor});
+                },0|Math.random()*1000)
+            }) 
+        }
+        const resp_arr = [];
+        async function* generador(){
+            console.log("Inicia generator");
+            resp_arr.push( await cuadrado(0))
+            resp_arr.push( await cuadrado(1))
+            resp_arr.push( await cuadrado(2))
+            yield await cuadrado(1)
+            yield await cuadrado(2)
+            yield await cuadrado(3)
+            yield await cuadrado(4)
+            yield await cuadrado(5)
+            console.log("Termina generator");
+        }
+
+        
+        async function capturarRes(){
+            try{
+                let res = await generador().next()
+                resp_arr.push(res.value.res)
+                res
+                resp_arr.push(res.value.res)
+                console.log(resp_arr)
+            }catch(err){
+                console.error(err)
+            }
+            
+        } 
+        capturarRes();
+        //let generar = generador().next().then(({value,done})=>{ resp_arr.push(value)});
+        
+        
+
+    
+    //    console.log(resp)
+    // resp.next().then(({ value, done }) => {
+    //     console.log(value);
+    // });
+    // resp.next().then(({ value, done }) => {
+    //     console.log(value);
+    // });
+
+       
+       
+       
+    
+    </script>
+</body>
+</html>

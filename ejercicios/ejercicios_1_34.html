@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// 1) Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá 10.
+// 2) Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFuncion("Hola Mundo", 4) devolverá "Hola".
+// 3) Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe. miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'].
+// 4) Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.
+        
+        //solución uno
+        let cadena = "hola mundo"
+
+        let contarCaracteres = cadena => {
+            if(typeof cadena === "string") {return cadena.length}else{return "No es una cadena"}
+        }
+        console.log(contarCaracteres(cadena));
+        //solucion dos
+        let cadena_a_recortar = "hola mundo";
+        let cortarCadena = (cadena,numero) => {
+            if(typeof cadena === "string" && typeof numero==="number"){ 
+                return cadena.substr(0,numero)
+            }
+            else{
+                return "No es una cadena"
+            }
+        }
+        console.log(cortarCadena(cadena_a_recortar,4));
+        //solucion tres
+        let cadena_a_separar = "hola mundo del diablo y de Dios";
+        let separarCadena = (cadena,caracter) => {
+            if(typeof cadena === "string" && typeof caracter ==="string"){ 
+                return cadena.split(caracter)
+            }
+            else{
+                return "tipo de valor incorrecto"
+            }
+        }
+        console.log(separarCadena(cadena_a_separar,","));
+        //solucion cuatro
+        let texto_a_repetir = "hola mundo";
+        let repetirTexto = (cadena,numero) => {
+            if(typeof cadena === "string" && typeof numero ==="number"){ 
+                return cadena.repeat(numero)            
+            }       else{
+                return "tipo de valor incorrecto"
+            }
+        }
+        console.log(repetirTexto(texto_a_repetir,4));
+    </script>
+</body>
+</html>

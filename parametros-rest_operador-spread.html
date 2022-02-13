@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //parametros rest
+        function sumar(a,b,...c){
+            let resultado = a+b;
+            c.forEach(function(n){
+                resultado += n
+            });
+
+            return resultado;
+        }
+
+        console.log(sumar(1,2,3,4));
+
+        //-----------------------operador de propagacion///////////////
+        const ar1 = [1,2,3,4,5],
+            ar2 = [6,7,8,9,0];
+
+            console.log(ar1,ar2);
+            const ar3  = [...ar1,...ar2];
+            console.log(ar3);
+    </script>
+</body>
+</html>

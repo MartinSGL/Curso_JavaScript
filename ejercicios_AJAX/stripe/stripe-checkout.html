@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamales con stripe</title>
+    <style>
+        html{
+            box-sizing: border-box;
+            font-family: sans-serif;
+            font-size: 16px;
+        }
+
+        *,
+        *:before,
+        *:after{
+            box-sizing: inherit;
+        }
+
+        .tamales{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .tamales>*{
+            flex: 1 1 200px;
+            margin: 1rem;
+        }
+
+        .tamal{
+            background-color: crimson;
+            color:chartreuse;
+            font-size: 125%;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease-out;
+        }
+
+        .tamal:hover{
+            opacity: 0.9;
+            transform: scale(.9);
+        }
+
+        .tamal img{
+            max-width: 100%;
+            height: auto;
+        }
+
+        .tamal figcaption{
+            padding: 1rem;
+            font-size: 1rem;
+
+        }
+
+        .tamal figcaption .description{
+            font-size: 0.6rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chechout con Stripe</h1>
+    <section id="tamales" class="tamales"></section>
+    <template id="tamal-template">
+        <figure class="tamal">
+            <img>
+            <figcaption></figcaption>
+        </figure>
+    </template>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="assets/stripe-checkout.js" type="module"></script>
+</body>
+</html>

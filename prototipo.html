@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const animal = {
+        //     nombre: "Negra",
+        //     sonar(){
+        //         console.log("Hago sonidos porque estoy vivo");
+        //     }
+        // }
+
+        // const animal2 = {
+        //     nombre: "Manchas",
+        //     sonar(){
+        //         console.log("Hago sonidos porque estoy vivo");
+        //     }
+        // }
+
+        // console.log(animal);
+        // console.log(animal2);
+
+        function Animal(nombre, genero){
+            //Atributos
+            this.nombre = nombre;
+            this.genero = genero;
+
+        }
+
+        const snoopy = new Animal('Negra','femenino'),
+            lolaBunny = new Animal("manchas",'femenina')
+        
+        console.log(snoopy,lolaBunny);
+
+        Animal.prototype.sonar = function(){
+            console.log(`hola me llamo ${this.nombre}`)
+        }
+
+        snoopy.sonar();
+        lolaBunny.sonar();
+       
+    </script>
+</body>
+</html>

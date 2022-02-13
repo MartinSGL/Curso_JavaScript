@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.
+        let contarLetras = (frase=undefined) => {
+            if(typeof frase!== 'string' || frase===undefined) return 'tipo de dato incorrecto'
+            let vocales = 0;
+            let consonantes = 0;
+            for (const l of frase) {
+                if (/AEIOUÁÉÍÓÚÜaeiouáéíóúü/i.test(l)){
+                    vocales++
+                }else{
+                    if(/[a-z]/i.test(l)){
+                        consonantes++;
+                    }
+                }  
+            }
+
+            return `la frase tienen ${vocales} vocales y ${consonantes} consonantes`
+        }
+
+        console.log(contarLetras('Hola mundo'))
+        // 19) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero.
+        let textoValido = (texto = undefined) => {
+            if (typeof texto !== 'string' || texto === undefined) return 'tipo de dato no valido'
+            // let texto_n = texto.split(" ").join("")
+            let expReg = /^[a-záéíóúü\s]+$/i.test(texto)
+
+            // for (const t of texto_n) {
+            //     if(/[a-z]/i.test(t)===false){
+            //         return 'no es un nombre valido'
+            //     } 
+            // }
+            return (expReg)
+                ? 'nombre valido'
+                : 'nombre no valido'
+            
+        }
+        console.log(textoValido('Hola este es un nombre'))
+        // 20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
+        let correoVerdadero = (correo = undefined) => {
+            if (typeof texto !== 'string' || texto === undefined) return 'tipo de dato no valido'
+
+            let expReg = /[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i.test(correo)
+            return (expReg)
+                ? 'email valido'
+                : 'email no valido'
+        }
+    </script>
+</body>
+</html>

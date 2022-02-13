@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //const saludo = () => console.log('hola');
+        const saludo = nombre => console.log(`hola ${nombre}`);
+        
+        saludo('irma');
+
+        // const sumar = function (a,b){
+        //     return a+b;
+        // }
+
+        const sumar = (a,b) => a+b;
+        console.log(sumar(91,9));
+
+        const funcionDeVariasLineas = () =>{
+            console.log('uno');
+            console.log('dos');
+            console.log('tres');
+        }
+
+        funcionDeVariasLineas();
+
+        const numeros = [1,2,3,4,5];
+
+        numeros.forEach((el,index) => console.log(`${el} esta en la posicion ${index}`));
+
+        function Perro(){
+            console.log(this);
+        }
+
+        const perro = {
+            nombre:"Vladipucha",
+            ladrar: () =>
+            {
+                console.log(this);
+            }
+        }
+        //ver diferencias entre funcion arrow y no arrow
+        const perro = {
+            nombre:"Vladipucha",
+            ladrar()
+            {
+                console.log(this);
+            }
+        }
+        //el contexto de this en funciones de flecha hacen referencia al objeto windows
+        perro.ladrar();
+        Perro();
+    </script>
+</body>
+</html>

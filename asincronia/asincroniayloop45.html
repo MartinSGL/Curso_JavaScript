@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Código Sincrono Bloqueante*/
+        // (()=>{
+        //     console.log("Código Sincrono");
+        //     console.log("Inicio");
+
+        //     function dos(){
+        //         console.log("Dos")
+        //     }
+        //     function uno(){
+        //         console.log("Uno")
+        //         dos()
+        //         console.log("Tres")
+        //     }
+
+        //     uno();
+        //     console.log("Fin")
+        // })()
+        // /*Código asíncrono No Bloqueante*/
+        // (()=>{
+        //     console.log("Codigo Asincrono");
+        //     console.log("Inicio");
+        //     function dos(){
+        //         setTimeOut(function(){
+        //             console.log("Uno")
+        //         },0)
+        //     }
+        //     dos();
+        //     console.log("Tres")
+        //     uno();
+        //     console.log("Fin")
+        // })()
+
+        function uno (numero){
+            for (let i = 0; i < numero; i++) {
+                console.log('uno')
+            }
+            dos()
+        }
+
+        function dos(){
+            for (let i = 0; i < 10; i++) {
+                console.log('dos')
+            }
+        }
+
+        uno(1000)
+    </script>
+</body>
+</html>

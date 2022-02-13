@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+        function Animal(nombre, genero){
+                //Atributos
+                this.nombre = nombre;
+                this.genero = genero;
+    
+            }
+    
+            Animal.prototype.sonar = function(){
+                console.log(`hola me llamo ${this.nombre}`)
+            }
+            
+        function Perro(nombre,genero,tamanio){
+                // Attributos
+                this.super = Animal;
+                this.super(nombre,genero);
+                this.tamanio = tamanio;
+            }
+    
+            //Perro está herendando de Animal
+            Perro.prototype = new Animal();
+            Perro.prototype.constructor = Perro;
+    
+            //sobreescritura de metodos de padre del Prototipo padr en el hijo
+            Perro.prototype.sonar = function(){
+                console.log("soy un perro y mi sonido es un ladrido");
+            }
+            Perro.prototype.ladrar = function (){
+                console.log('gua gua');
+            }
+    
+            const snoopy = new Perro('Negra','femenino','gorda'),
+                lolaBunny = new Animal("manchas",'femenina')
+    
+            console.log(snoopy,lolaBunny);
+    
+            snoopy.sonar();
+            lolaBunny.sonar();
+    </script>
+</body>
+</html>

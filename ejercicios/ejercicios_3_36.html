@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 9) Programa una función que obtenga un numero aleatorio entre 501 y 600.
+        let numeroAleatorio = () =>{
+             let numero = Math.round(Math.random() * 99 + 501)
+             return numero;
+        }
+        
+        console.log(numeroAleatorio());
+        
+
+        
+        // 10) Programa una función que reciba un número y evalúe si es capicúa o no (que se lee igual en un sentido que en otro), pe. miFuncion(2002) devolverá true.
+        let numerCapicúa = numero => {
+            if(typeof (numero) === "number" && (numero) != false){
+                let numero_reversa = numero.toString().split('').reverse().join('');
+                let numero_string = numero.toString();
+                if(numero_string === numero_reversa){return "si es"}else{ return "no es"} 
+            }else{
+                return  "Tipo de dato incorrecto";
+            }
+        }
+        console.log(numerCapicúa(2008))
+        // 11) Programa una función que calcule el factorial de un número (El factorial de un entero positivo n, se define como el producto de todos los números enteros positivos desde 1 hasta n), pe. miFuncion(5) devolverá 120.
+        let numeroFactorial = n =>{
+            if(typeof (n) === "number" && (n) != false && numero > 0){
+                let res=n;
+                while(n > 1){
+                    res *= (n-1)
+                    n--
+                }
+                return res;
+            }else{
+                return  "Tipo de dato incorrecto";
+            }
+        }
+        console.log(numeroFactorial(5))
+    </script>
+</body>
+</html>

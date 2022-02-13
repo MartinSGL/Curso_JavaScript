@@ -1,0 +1,11 @@
+{
+    "cadena":"chavin",
+    "numero":"1",
+    "booleano":"true",
+    "arreglo":["correr","programar","cocinar"],
+    "objeto":{
+        "twitter": "@vergas",
+        "email":"martinvergas@gmail.com"
+    },
+    "nulo":null
+}

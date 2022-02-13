@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 12) Programa una función que determine si un número es primo (aquel que solo es divisible por sí mismo y 1) o no, pe. miFuncion(7) devolverá true.
+        let numeroPrimo = numero =>{
+        if(typeof (numero) === "number" && (numero) != false){
+            let dividendo = numero-1;    
+            while(dividendo > 1 ){
+                    if(numero % dividendo === 0){
+                        return "no es primo"
+                    }
+                    dividendo--
+                }
+                return "es primo"
+            }else{
+                return "Tipo de dato incorrecto"
+            }
+        }
+       
+    
+        console.log(numeroPrimo(2))
+        // 13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar.
+        let numeroParImpar = numero =>
+            typeof (numero) === "number" && (numero) != false
+            ? numero % 2 ==0 ? "es par" : "es impart"
+            : "Tipo de dato incorrecto"
+        console.log(numeroParImpar(3))
+
+        // 14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.
+        let convertirGrados = (cantidad=undefined,tipo=undefined) => {
+            if(typeof cantidad==="number" && tipo==='C' || tipo==='F' && tipo!== undefined && cantidad!== undefined){
+                return tipo === 'C'
+                    ?  (cantidad * 1.8) + 32
+                    :  (cantidad-32) / 1.8
+            }else{
+                return "Tipo de datos incorrectos"
+            }
+        }
+
+        console.log(convertirGrados('C','2'))
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const set = new Set([1,2,3,3,3,4,true,true,false,false,{},{},'hola','HOLA'])
+        // console.log(set)
+        // console.log(set.size)
+
+        const set2 = new Set();
+        set2.add(1)
+        set2.add(2)
+        set2.add('hola')
+        set2.add(3)
+        set2.add(true)
+        set2.add(false)
+        set2.add(true)
+        set2.add({})
+        set2.add({})
+        console.log(set2)
+
+        for (const s of set) {
+            console.log(s);
+        }
+        console.log('------------------------hola-----------------------------')
+        set2.forEach(item => console.log(item))
+        console.log('------------------------hola-----------------------------')
+        console.log(Array.from(set)) //convertir set en arreglo
+        set2.delete(1)
+        console.log(set2)
+        console.log(set2.has("hola"))
+        set2.clear()
+        console.log(set2)
+    </script>
+</body>
+</html>

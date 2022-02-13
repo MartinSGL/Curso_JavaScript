@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let cadena = `Lorem ipsum dolor sit amet consectetur 
+        adipisicing elit. Doloremque quas nisi minus, 
+        veritatis qui iusto enim alias? Neque aut aperiam
+         excepturi doloribus perferendis, deleniti 
+         asperiores sunt saepe suscipit ullam delectus? 88`
+        //let expReg = new RegExp("lorem","ig");
+        
+        //let expReg2 = /\d/ig; //numeros
+        //let expReg2 = /[0-9]/ig; //rango de numeros
+        let expReg2 = /lorem{1,}/ig; //numeros
+        console.log(expReg2.test(cadena));
+        console.log(expReg2.exec(cadena));
+    </script>
+</body>
+</html>

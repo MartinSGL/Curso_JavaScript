@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 24) Programa una función que dado un arreglo de números devuelva un objeto con dos arreglos, el primero tendrá los numeros ordenados en forma ascendente y el segundo de forma descendiente, pe. miFuncion([7, 5,7,8,6]) devolverá { asc: [5,6,7,7,8], desc: [8,7,7,6,5] }.
+        let ordenarArray = (array = undefined) =>{
+            if(!(array instanceof Array)) return 'el dato no es un array'
+            for (const key in array) {
+                if(typeof array[key] !== "number"){
+                    return `El array debe ser puros numeros ${array}`
+                }
+            }
+            return {
+                asc: array.slice(0).sort((a,b)=>a-b).join(),
+                desc: array.slice(0).sort((a,b)=>b-a).join()
+            }
+        }
+        console.log(ordenarArray([1,4,5,2,3])) 
+        // 25) Programa una función que dado un arreglo de elementos, elimine los duplicados, pe. miFuncion(["x", 10, "x", 2, "10", 10, true, true]) devolverá ["x", 10, 2, "10", true].
+        let eliminarDuplicados = (array = undefined) => {
+            if(!(array instanceof Array)) return 'el dato no es un array'
+            // return [...new Set(array)];
+            return array.filter(function(item, pos) {
+                return array.indexOf(item) == pos;
+            })
+        }
+        console.log(eliminarDuplicados([1,2,1,'x','y','x']))
+        // 26) Programa una función que dado un arreglo de números obtenga el promedio, pe. promedio([9,8,7,6,5,4,3,2,1,0]) devolverá 4.5.
+        let arrayPromedio = (array=undefined) =>{
+            if(!(array instanceof Array)) return 'el dato no es un array'
+            for (const key in array) {
+                if(typeof array[key] !== "number"){
+                    return `El array debe ser puros numeros ${array}`
+                }
+            } 
+            // return array.reduce((p, c)=> p +c)/array.length
+            return array.reduce((total,num,index,self)=>{
+                total += num
+                if(index === (self.length-1)){ 
+                    return total/self.length
+                }else{
+                    return total
+                }
+            })      
+        }
+
+        console.log(arrayPromedio([5,6,7,8,9,10]))
+    </script>
+</body>
+</html>

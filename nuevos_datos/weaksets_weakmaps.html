@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const ws = new WeakSet();
+        // let valor1 = {'valor':1}
+        // let valor2 = {'valor':2}
+        // let valor3 = {'valor':3}
+        // ws.add(valor1);
+        // ws.add(valor2);
+        // // ws.add(valor3);
+        // console.log(ws)
+
+        // console.log(ws.has(valor1));
+        // console.log(ws.has(valor3));
+        // ws.add(valor1);
+        // ws.add(valor2);
+        // console.log(ws)
+
+        // setInterval(
+        //     ()=> console.log(ws),1000
+        // )
+
+        // setTimeout(()=>{
+        //     valor1=null
+        //     valor2=null
+        //     valor3=null
+        // },5000)
+
+        const wm = new WeakMap();
+        let llave1 = {}
+        let llave2 = {}
+        let llave3 = {}
+
+        wm.set(llave1,1)
+        wm.set(llave1,2)
+        console.log(wm)
+
+        console.log(wm.get(llave1))
+        console.log(wm.get(llave2))
+        console.log(wm.get(llave3))
+
+        //se puede borrar y hacer algunas operaciones, no se pueden iterar ni saber el tamaño
+        //el weakset se parece mas a un array y el weak map mas a un objeto
+
+    </script>
+</body>
+</html>
