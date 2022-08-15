@@ -386,25 +386,25 @@ console.log('-------------video 74 Eventos con parámetros y remover eventos ---
 console.clear()
 console.log('-------------video 75 flujo de los eventos ----------------')
 
-// const $divsEventos = document.querySelectorAll(".eventos-flujo div")
+const $divsEventos = document.querySelectorAll(".eventos-flujo div")
 
-// console.log($divsEventos)
+console.log($divsEventos)
 
-// function flujoEventos(e){
-//     console.log(`hola te saluda ${this.className}, el click lo originó ${e.target.cl}`)
-// }
+function flujoEventos(e){
+    console.log(`hola te saluda ${this.className}, el click lo originó ${e.target.cl}`)
+}
 
-// $divsEventos.forEach(div=>{
-//     // fase de burbuja
-//     // div.addEventListener('click',flujoEventos);//burbuja
-//     // div.addEventListener('click',flujoEventos,false);
-//     // fase de captura
-//     // div.addEventListener('click',flujoEventos,true);
-//     div.addEventListener('click',flujoEventos,{
-//         capture: false,
-//         once:true
-//     });
-// })
+$divsEventos.forEach(div=>{
+    // fase de burbuja
+    // div.addEventListener('click',flujoEventos);//burbuja
+    // div.addEventListener('click',flujoEventos,false);
+    // fase de captura
+    div.addEventListener('click',flujoEventos,true);
+    // div.addEventListener('click',flujoEventos,{
+    //     capture: false,
+    //     once:true
+    // });
+})
 console.clear()
 console.log('-------------video 76 stopPropagation & preventDefault ----------------')
 
@@ -434,27 +434,27 @@ console.log('-------------video 76 stopPropagation & preventDefault ------------
 // })
 
 console.clear()
-console.log('-------------video 77 delegacion de eventos ----------------')
+// console.log('-------------video 77 delegacion de eventos ----------------')
 
-const $divsEventos = document.querySelectorAll(".eventos-flujo div"),
-    $linkEventos = document.querySelector('.eventos-flujo a');
+// const $divsEventos = document.querySelectorAll(".eventos-flujo div"),
+//     $linkEventos = document.querySelector('.eventos-flujo a');
 
-function flujoEventos(e){
-    console.log(`hola te saluda ${this.className}, el click lo originó ${e.target.cl}`)
-}
+// function flujoEventos(e){
+//     console.log(`hola te saluda ${this.className}, el click lo originó ${e.target.cl}`)
+// }
 
-document.addEventListener('click',(e)=>{
-    console.log('click en ', e.target);
+// document.addEventListener('click',(e)=>{
+//     console.log('click en ', e.target);
 
-    if(e.target.matches('.eventos-flujo div')){
-        flujoEventos(e);
-    }
+//     if(e.target.matches('.eventos-flujo div')){
+//         flujoEventos(e);
+//     }
 
-    if(e.target.matches(".eventos-flujo a")){
-        alert('hola soy tu amigo vergas')
-        e.preventDefault()
-    }
-})
+//     if(e.target.matches(".eventos-flujo a")){
+//         alert('hola soy tu amigo vergas')
+//         e.preventDefault()
+//     }
+// })
 
 //se mejora el rendimiento de memoria y recursos y ademas el codigo se reduce
 

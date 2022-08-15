@@ -21,15 +21,17 @@
             }
             
         function Perro(nombre,genero,tamanio){
-                // Attributos
+                // heredando Attributos
                 this.super = Animal;
                 this.super(nombre,genero);
+                //atributo de la clase perro
                 this.tamanio = tamanio;
             }
     
             //Perro está herendando de Animal
             Perro.prototype = new Animal();
             Perro.prototype.constructor = Perro;
+           
     
             //sobreescritura de metodos de padre del Prototipo padr en el hijo
             Perro.prototype.sonar = function(){
@@ -43,6 +45,8 @@
                 lolaBunny = new Animal("manchas",'femenina')
     
             console.log(snoopy,lolaBunny);
+            console.log(snoopy.__proto__);
+
     
             snoopy.sonar();
             lolaBunny.sonar();
